@@ -26,6 +26,7 @@ public class ISRewarded: RewardAd<String> {
         if IronSource.hasRewardedVideo() {
             listener.rewardedVideoHasChangedAvailability(true)
         } else {
+            listener.setLoadEvents(onLoaded: nil)
             onError(NSError(domain: "ironsource rewarded", code: 0, userInfo: nil))
         }
     }
